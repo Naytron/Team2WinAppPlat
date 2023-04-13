@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=team2workshoprg9a81;AccountKey=B/4H32G7R3qFsIEdArH7kjpFlnFwEsVekG9rN51VjF5uwt7TOyLXytxZp9jvrWWOkfqqRXUfa+bN+AStjVuKhw==;EndpointSuffix=core.windows.net",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "FUNCTIONS_EXTENSION_VERSION": "~4",
+    "APPINSIGHTS_INSTRUMENTATIONKEY": "372b928b-5b47-4b9d-a8fc-f5c3c8cdd34d",
+    "APPLICATIONINSIGHTS_CONNECTION_STRING": "InstrumentationKey=372b928b-5b47-4b9d-a8fc-f5c3c8cdd34d;IngestionEndpoint=https://eastus-8.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus.livediagnostics.monitor.azure.com/",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=team2workshoprg9a81;AccountKey=B/4H32G7R3qFsIEdArH7kjpFlnFwEsVekG9rN51VjF5uwt7TOyLXytxZp9jvrWWOkfqqRXUfa+bN+AStjVuKhw==;EndpointSuffix=core.windows.net",
+    "WEBSITE_CONTENTSHARE": "myhealthcheckappfn9f07",
+    "cosmos-healthapp-dev-t2_DOCUMENTDB": "AccountEndpoint=https://cosmos-healthapp-dev-t2.documents.azure.com:443/;AccountKey=1mOyxo2GB9AQz3yP2jFuHe4yFKgOw5CIvlbmwdHKQAtIEwaRMOtlPrgy6yJMDdqZ7w8hjdIuhWzaACDbVxAjwQ==;",
+    "CosmosDbConnectionString": "AccountEndpoint=https://cosmos-healthapp-dev-t2.documents.azure.com:443/;AccountKey=1mOyxo2GB9AQz3yP2jFuHe4yFKgOw5CIvlbmwdHKQAtIEwaRMOtlPrgy6yJMDdqZ7w8hjdIuhWzaACDbVxAjwQ==;"
+  }
+}
