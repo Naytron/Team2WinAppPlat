@@ -80,12 +80,7 @@ resource appServiceAccount 'Microsoft.Web/sites@2022-03-01' = {
     siteConfig: {
       appSettings: []
       phpVersion: 'OFF'
-      metadata: [
-        {
-          name:'CURRENT_STACK'
-          value:'dotnet'
-        }
-      ]
+
       netFrameworkVersion: 'v7.0'
       alwaysOn: true
     }

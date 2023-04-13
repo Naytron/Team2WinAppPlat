@@ -26,7 +26,7 @@ jobs:
         uses: Azure/arm-deploy@v1.0.9
         id: deploy
         with:
-          scope: subscription
+          scope: resourceGroup
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           template: ./setup/AzureLabEnvironment.bicep
           deploymentMode: Incremental
