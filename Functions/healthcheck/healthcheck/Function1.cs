@@ -18,10 +18,6 @@ namespace healthcheck
         [FunctionName("Function1")]
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-            //[CosmosDB(
-            //    databaseName: "Healthcheckdb",
-            //    containerName: "HealthCheck",
-            //    ConnectionStringSettings = "")] IAsyncCollector<HealthCheck> healthCheck,
             [CosmosDB(
                 databaseName: "Healthcheckdb",
                 containerName: "HealthCheck",
@@ -30,24 +26,11 @@ namespace healthcheck
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            //string name = req.Query["name"];
-
-            //string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
-            //dynamic data = JsonConvert.DeserializeObject(requestBody);
-            //name = name ?? data?.name;
-
-            string responseMessage = "submitted";
-           
-            //pull this from the request object
-            HealthCheck hc = new HealthCheck();
-            hc.id = "1";
-            hc.PatientID = 1;
-            hc.Date = DateTime.Now;
-            hc.HealthStatus = "Good";
-            hc.Symptoms = new string[] { "Cough", "Fever" };
-
+            string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+            HealthCheck hc = (HealthCheck)JsonConvert.DeserializeObject(requestBody, typeof(HealthCheck));
             await healthCheck.AddAsync(hc);
 
+            string responseMessage = "submitted";
             return new OkObjectResult(responseMessage);
         }
 
