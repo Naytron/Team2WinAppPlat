@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: authenticate
         uses: azure/login@v1
         with:
@@ -23,10 +26,11 @@ jobs:
         uses: Azure/arm-deploy@v1.0.9
         id: deploy
         with:
-          scope: subscription
+          scope: resourcegroup
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           template: ./setup/AzureLabEnvironment.bicep
           deploymentMode: Incremental
-          region: eastus                                                        # Want this driven from an environment variable
-          parameters: 'uniqueSuffix=T2 workload=healthapp environment=dev region=eastus publisherEmail=kvr@htm.com publisherName=kvr'  # Can also specify a parameters file location.  Want these driven from environment variables
+          region: eastus   
+          resourceGroupName: Team2workshop-rg                                                    # Want this driven from an environment variable
+          parameters: 'uniqueSuffix=t2 workload=healthapp environment=dev region=eastus publisherEmail=kvr@htm.com publisherName=kvr'  # Can also specify a parameters file location.  Want these driven from environment variables
           failOnStdErr: false
