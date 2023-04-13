@@ -18,3 +18,14 @@ jobs:
       - name: 'Run Azure CLI Commands'
         run: |
           az account show
+
+      - name: Deploy Azure Resource Manager (ARM) Template
+        uses: Azure/arm-deploy@v1.0.9
+        id: deploy
+        with:
+          scope: subscription
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          template: ./setup/AzureLabEnvironment.bicep
+          deploymentMode: Incremental                                                        # Want this driven from an environment variable
+          parameters: 'uniqueSuffix=T2 workload=healthapp environment=dev region=east publisherEmail=kvr@htm.com publisherName=kvr'  # Can also specify a parameters file location.  Want these driven from environment variables
+          failOnStdErr: false
