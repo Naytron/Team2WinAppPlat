@@ -14,3 +14,7 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
+          
+      - name: 'Run Azure CLI Commands'
+        run: |
+          az account show
