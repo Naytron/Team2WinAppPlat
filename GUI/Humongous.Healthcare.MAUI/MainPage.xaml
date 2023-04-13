@@ -4,38 +4,41 @@
              x:Class="Humongous.Healthcare.MAUI.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
+        <Grid
             Padding="30,0"
-            VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
+            VerticalOptions="Center"
+            ColumnSpacing="20"
+            RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <VerticalStackLayout Grid.ColumnSpan="3">
+                <RadioButton Value="I feel well" Content="I feel well" CheckedChanged="RadioButton_CheckedChanged"/>
+                <RadioButton Value="I feel unwell" Content="I feel unwell" CheckedChanged="RadioButton_CheckedChanged"/>
+            </VerticalStackLayout>
+            <Label Grid.Row="1" Grid.Column="0">Symptom:</Label>
+            <Entry x:Name="symptomEntry" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="symptomButton" Grid.Row="1" Grid.Column="2" Clicked="OnSymptomButtonClicked" Text="Add Symptom"/>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">Symptoms in last 14 days</Label>
+            <Button Grid.Row="2" Grid.Column="2" Text="Clear Symptoms" Clicked="OnClearButtonClicked"/>
+            <CollectionView x:Name="symptomList" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"></CollectionView>
+            <Button Grid.Row="4" Grid.ColumnSpan="3"
                 x:Name="CounterBtn"
-                Text="Click me"
+                Text="Submit"
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                HorizontalOptions="End" />
 
-        </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 
 </ContentPage>

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "oWsmUFG6b25YPDoNmnU8SlHbo/coH3MIAKIBWBORl4t/s1AA6PSgBql6Og4A0z6+UVqnnsiUjNyby7B7AYCJ6g==",
+  "dgSpecHash": "FZbwHVOzeRCFSoYWqxyhzF1TNzreaG7eGuh18hxgszqAHVhNJVbcbURkkbGdflj/OkNZERQEZKhTg5b3DP3PJA==",
   "success": true,
   "projectFilePath": "C:\\Users\\bireis\\source\\repos\\Team2WinAppPlat\\GUI\\Humongous.Healthcare.MAUI\\Humongous.Healthcare.MAUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bireis\\.nuget\\packages\\communitytoolkit.mvvm\\8.1.0\\communitytoolkit.mvvm.8.1.0.nupkg.sha512",
     "C:\\Users\\bireis\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\bireis\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\bireis\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
