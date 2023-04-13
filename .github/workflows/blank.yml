@@ -26,6 +26,7 @@ jobs:
           scope: subscription
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           template: ./setup/AzureLabEnvironment.bicep
-          deploymentMode: Incremental                                                        # Want this driven from an environment variable
-          parameters: 'uniqueSuffix=T2 workload=healthapp environment=dev region=east publisherEmail=kvr@htm.com publisherName=kvr'  # Can also specify a parameters file location.  Want these driven from environment variables
+          deploymentMode: Incremental
+          region: eastus                                                        # Want this driven from an environment variable
+          parameters: 'uniqueSuffix=T2 workload=healthapp environment=dev region=eastus publisherEmail=kvr@htm.com publisherName=kvr'  # Can also specify a parameters file location.  Want these driven from environment variables
           failOnStdErr: false
