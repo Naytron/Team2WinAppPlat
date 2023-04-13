@@ -23,19 +23,24 @@ public partial class MainPage : ContentPage
 
 	private async void OnCounterClicked(object sender, EventArgs e)
 	{
-		string[] symptoms = { "Congestion", "Cough", "Fever" };
+		if (healthStatus == "")
+		{
+			await DisplayAlert("Health Status Required", "Please specify a health status", "OK");
+		}
 
         var submission = new Models.Submission()
 		{
-			PatientID = 1,
+			id = Guid.NewGuid().ToString(),
+			PatientID = 77,
 			Date = DateTime.Today,
-			HealthStatus = "I feel unwell",
-			Symptoms = symptoms,
+			HealthStatus = healthStatus,
+			Symptoms = symptoms.ToArray(),
 		};
         bool ret = await svc.AddSubmission(submission);
 		if (ret)
 		{
 			await DisplayAlert("Submission", "Submitted successfully", "OK");
+			symptoms.Clear();
 		} 
 		else
 		{

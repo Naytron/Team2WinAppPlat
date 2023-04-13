@@ -12,6 +12,6 @@
         Route="MainPage" />
     <ShellContent
         Title="Health Check History"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        ContentTemplate="{DataTemplate local:HistoryPage}"
+        Route="HistoryPage" />
 </Shell>

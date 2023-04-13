@@ -13,7 +13,8 @@ namespace Humongous.Healthcare.MAUI.Services
     {
         HttpClient _client;
         JsonSerializerOptions _serializerOptions;
-        string uriPrefix = "";
+        string uriPrefix = "https://myhealthcheckappfn.azurewebsites.net/api/Function1";
+        // string uriPrefix = "https://taw-win-with-app-platform-apiservice-tibi.azure-api.net/HealthCheck?subscription-key=8bf42df61dd740c3ab47a058c0f58da9";
         public SubmissionService()
         {
             _client = new HttpClient();
